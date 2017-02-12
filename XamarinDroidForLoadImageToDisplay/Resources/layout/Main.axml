@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:text="Load Image From Resource"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LoadImageFromResourceButton" />
+    <Button
+        android:text="Load Image From Drawable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LoadImageFromDrawableButton" />
+    <Button
+        android:text="Load Image From Asserts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LoadImageFromAssertsButton" />
+    <Button
+        android:text="Load Image From Local File"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LoadImageFromLocalFileButton" />
+    <ImageView
+        android:src="@drawable/icon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/MainImageView" />
+</LinearLayout>
