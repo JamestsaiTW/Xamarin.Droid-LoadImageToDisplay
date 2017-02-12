@@ -23,6 +23,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/LoadImageFromLocalFileButton" />
+    <Button
+        android:text="Load Image From Gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LoadImageFromGalleryButton" />
+    <Button
+        android:text="Load Image From Url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LoadImageFromUrlButton" />
     <ImageView
         android:src="@drawable/icon"
         android:layout_width="match_parent"

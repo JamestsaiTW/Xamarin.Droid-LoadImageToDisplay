@@ -61,6 +61,48 @@ namespace XamarinDroidForLoadImageToDisplay
                 }
                 mainImageView.SetImageURI(Android.Net.Uri.Parse(fullPath));
             };
+
+            var loadImageFromGalleryButton = FindViewById<Button>(Resource.Id.LoadImageFromGalleryButton);
+            loadImageFromGalleryButton.Click += (sender, e) =>
+            {
+                var intent = new Intent();
+                intent.SetType("image/*");
+                intent.SetAction(Intent.ActionGetContent);
+                StartActivityForResult(Intent.CreateChooser(intent, "選取圖片"), 999);
+            };
+
+            var loadImageFromUrlButton = FindViewById<Button>(Resource.Id.LoadImageFromUrlButton);
+            loadImageFromUrlButton.Click += async (sender, e) =>
+            {
+                mainImageView.SetImageBitmap(
+                    await GetImageFromUrlAsync("https://xamarinclassdemo.azurewebsites.net/images/xamarin_logo5.png"));
+            };
+        }
+
+        protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+
+            if (requestCode == 999 && resultCode == Result.Ok)
+            {
+                var imageView = FindViewById<ImageView>(Resource.Id.MainImageView);
+                imageView.SetImageURI(data.Data);
+            }
+        }
+    
+        private static async Task<Bitmap> GetImageFromUrlAsync(string url)
+        {
+            Bitmap imageBitmap = null;
+            using (var httpClient = new HttpClient())
+            {
+                var imageBytes = await httpClient.GetByteArrayAsync(url);
+
+                if (imageBytes != null && imageBytes.Length > 0)
+                {
+                    imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+                }
+            }
+            return imageBitmap;
         }
     }
 }

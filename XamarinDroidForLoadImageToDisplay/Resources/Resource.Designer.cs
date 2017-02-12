@@ -72,14 +72,20 @@ namespace XamarinDroidForLoadImageToDisplay
 			// aapt resource value: 0x7f050001
 			public const int LoadImageFromDrawableButton = 2131034113;
 			
+			// aapt resource value: 0x7f050004
+			public const int LoadImageFromGalleryButton = 2131034116;
+			
 			// aapt resource value: 0x7f050003
 			public const int LoadImageFromLocalFileButton = 2131034115;
 			
 			// aapt resource value: 0x7f050000
 			public const int LoadImageFromResourceButton = 2131034112;
 			
-			// aapt resource value: 0x7f050004
-			public const int MainImageView = 2131034116;
+			// aapt resource value: 0x7f050005
+			public const int LoadImageFromUrlButton = 2131034117;
+			
+			// aapt resource value: 0x7f050006
+			public const int MainImageView = 2131034118;
 			
 			static Id()
 			{
